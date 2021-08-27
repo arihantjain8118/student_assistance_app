@@ -1,0 +1,26 @@
+{% extends './basic.html' %}
+
+
+
+
+
+{% block main %}
+    <br>
+
+  <div>
+
+<div id="pnrs">
+  <form  method="POST" class="text-center p-4">
+                 {% csrf_token %}
+                <p class="h1 mb-4">Welcome {{ user.username }}</p>
+                
+        
+                     <input class"inp" type="text" id="pnr" name="pnr" value="" placeholder="Enter PNR Number" class="form-control mb-4">
+                    <button type="submit" id="hig" class="btn btn-info btn-block my-4">Submit</button>
+          
+
+  </form>
+</div>
+</div>
+
+{% endblock main %}

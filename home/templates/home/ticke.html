@@ -1,0 +1,26 @@
+ 
+{% extends './basic.html' %}
+
+{% block main %}
+    <br>
+    <br>
+
+  <div>
+    <h2><b>{{ tic.train.source }} -> {{ tic.train.destination }}</b></h2>
+    <b>Passenger name :</b> {{ tic.passenger_name }}<br>
+    <b>PNR number :</b> {{ tic.pnr }}<br>
+    <b>Passenger age :</b> {{ tic.age }}<br>
+    <b>Passenger train :</b> {{ tic.train }}<br>
+    <b>Ticket Status :</b> {{ tic.status }}<br>
+    <b>Date :</b> {{ tic.date }}<br>
+    {% if tic.status == 'Confirm' %}
+    <b>Seat No :</b> {{ tic.seatno }}
+    {% else %}{% endif %}
+</div>
+
+{% if request.user == tic.user %}
+<a href={% url "home-cantic" tic.pnr %}>Cancel Ticket</a>
+{% endif %}
+
+
+{% endblock main %}

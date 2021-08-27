@@ -1,0 +1,22 @@
+{% extends './basic.html' %}
+
+{% block main %}
+    <br>
+    <br>
+    <p class="text-center h1 mb-4">My Bookings</p>
+<ul class="list-group list-group-flush">
+  <div>
+    {% for t in tic %}
+    <li class="list-group-item">
+    {{ t.passenger_name }}<br>
+    {{ t.pnr }}<br>
+    {{ t.train.source }} -> {{ t.train.destination }}<br>
+    {{ t.date }}<br>
+    <a href={% url "home-cantic" t.pnr %}>Cancel Ticket</a>
+    </li>
+    {% endfor %}
+    <li class="list-group-item"></li>
+</div>
+</ul>
+
+{% endblock main %}
